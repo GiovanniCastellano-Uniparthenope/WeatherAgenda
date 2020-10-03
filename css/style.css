@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+}
+
+.fullscreen {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container{
+  margin: auto;
+  width: 1100px;
+}
+
+.content{
+  horiz-align: center;
+}
+
+.content button{
+  background-color: whitesmoke;
+  border: 2px solid whitesmoke;
+  padding: 10px 24px;
+  color: black;
+  width: 60vw;
+  height: 10vh;
+  display: block;
+  margin: 5vh 20vw;
+  font-size: 2vh;
+}
+
+.content button:hover {
+  background-color: lightblue;
+}
