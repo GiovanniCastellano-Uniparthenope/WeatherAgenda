@@ -4,25 +4,21 @@ body {
 
 .fullscreen {
   display: flex;
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
 .container{
   margin: auto;
-  width: 1100px;
-}
-
-.content{
-  horiz-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .content button{
   background-color: whitesmoke;
   border: 2px solid whitesmoke;
-  padding: 10px 24px;
   color: black;
   width: 60vw;
   height: 10vh;
@@ -33,4 +29,43 @@ body {
 
 .content button:hover {
   background-color: lightblue;
+}
+
+.content div{
+  width: 90vw;
+  height: 45vh;
+  background-color: #3388ff;
+  margin: 5vh 5vw;
+}
+
+.weather div{
+  display: block;
+  width: 95%;
+  height: 30%;
+  margin: 0% 1%;
+  white-space: nowrap;
+}
+
+.weather label{
+  font-family: "Arial Black";
+  font-size: min(10vw, 70px);
+}
+
+.row1 img{
+  width: 25%;
+  height: 100%;
+  margin: 0% 15%;
+  object-fit: contain;
+}
+
+.row1 label{
+  margin: 10% 5%;
+}
+
+.row2 label{
+  margin: 10% 5%;
+}
+
+.row3 label{
+  margin: 10% 5%;
 }
