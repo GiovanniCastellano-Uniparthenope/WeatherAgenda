@@ -32,23 +32,24 @@ body {
 }
 
 .content div{
-  width: 90vw;
+  width: 60vw;
   height: 45vh;
   background-color: #3388ff;
-  margin: 5vh 5vw;
+  margin: 5vh 20vw;
 }
 
 .weather div{
-  display: block;
-  width: 95%;
-  height: 30%;
+  display: inline-block;
+  width: 55vw;
+  height: 25%;
   margin: 0% 1%;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .weather label{
   font-family: "Arial Black";
-  font-size: min(10vw, 70px);
+  font-size: min(7vw, 60px);
 }
 
 .row1 img{
@@ -59,13 +60,16 @@ body {
 }
 
 .row1 label{
-  margin: 10% 5%;
+  width: 50%;
+  margin: 0% 5%;
 }
 
 .row2 label{
-  margin: 10% 5%;
+  width: 5%;
+  margin: 0% 5%;
 }
 
 .row3 label{
-  margin: 10% 5%;
+  width: 50%;
+  margin: 0% 5%;
 }

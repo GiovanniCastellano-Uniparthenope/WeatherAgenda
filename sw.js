@@ -14,7 +14,7 @@ let filesToCache = [
     'index.html',
     'manifest.json',
     'css/style.css',
-    'js/main.js'
+    'js/main.js',
 ];
 
 self.addEventListener('install', function(e) {
