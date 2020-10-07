@@ -15,6 +15,15 @@ let filesToCache = [
     'manifest.json',
     'css/style.css',
     'js/main.js',
+    'images/sun.png',
+    'images/sunclouds.png',
+    'images/cloudy.png',
+    'images/rain.png',
+    'images/storm.png',
+    'images/snow.png',
+    'images/exclamation.png',
+    'images/cloudframe.png',
+    'images/question_mark.png'
 ];
 
 self.addEventListener('install', function(e) {
