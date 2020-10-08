@@ -1,0 +1,22 @@
+.mapid {
+    height: 50vh;
+    width: 60vw;
+    margin: 0vh 0vw 5vh 0vw;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+.eventdata {
+    margin: 5vh 20vw;
+    height: 90vh;
+    width: 60vw;
+}
+
+.eventdata input{
+    display: inline-block;
+    height: 10vh;
+    width: 60vw;
+    font-size: min(5vw, 30px);
+    margin: 0vh 0vw 5vh 0vw;
+    border: 2px solid black;
+}

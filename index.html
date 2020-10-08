@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>Weather Agenda</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="manifest" href="manifest.json">
 		<link rel="apple-touch-icon" href="images/hello-icon-192.png">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -34,10 +34,22 @@
 						<label id="clouds" name="clouds">C: --%</label>
 					</div>
 				</div>
-				<button name="NEWEVENT" class="buttons" id="NEWEVENT">NEW EVENT</button>
-				<button name="MYEVENTS" class="buttons" id="MYEVENTS">MY EVENTS</button>
+				<button name="NEWEVENT" class="buttons" id="NEWEVENT" onclick="loadNewEventPage()">NEW EVENT</button>
+				<button name="MYEVENTS" class="buttons" id="MYEVENTS" onclick="loadMyEventsPage()">MY EVENTS</button>
 			</div>
         </div>
 		<script src="js/main.js"></script>
+		<script>
+			function loadNewEventPage()
+			{
+				window.open("NewEvent.html", "_self");
+			}
+		</script>
+		<script>
+			function loadMyEventsPage()
+			{
+				window.open("MyEvents.html", "_self");
+			}
+		</script>
     </body>
 </html>
