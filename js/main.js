@@ -10,7 +10,9 @@ window.onload = () => {
         });
     }
 
-    fetch("") //ADD PATH
+    const path = "https://api.openweathermap.org/data/2.5/weather?q=Sorrento&units=metric&appid=" + keys.OpenWeatherKey;
+
+    fetch(path)
         .then( e => e.json())
         .then(weather => {
             const wtr = weather.weather;

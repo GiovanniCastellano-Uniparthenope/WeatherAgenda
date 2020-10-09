@@ -20,7 +20,7 @@ window.onload = () => {
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: "" //ADD ACCESS TOKEN HERE
+        accessToken: keys.MapBoxKey //ADD ACCESS TOKEN HERE
     }).addTo(mymap);
     
     mymap.locate({setView: true})
