@@ -10,7 +10,19 @@ window.onload = () => {
         });
     }
 
-    const path = "https://api.openweathermap.org/data/2.5/weather?q=Sorrento&units=metric&appid=" + keys.OpenWeatherKey;
+    L.map("mapid").locate()
+    .on("locationfound", function(coords){
+        afterInitialize(coords.latitude, coords.longitude)
+    })
+    .on("locationerror", function (error){
+        afterInitialize(40.856721, 14.28451)
+    })
+}
+
+function afterInitialize(lat, lon)
+{
+    var path = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat.toString()
+        + "&lon="+ lon.toString() +"&units=metric&appid=" + "";
 
     fetch(path)
         .then( e => e.json())
