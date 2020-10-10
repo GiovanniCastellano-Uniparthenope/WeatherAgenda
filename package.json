@@ -2,6 +2,6 @@
   "name": "WeatherAgenda",
   "version": "1.0.0",
   "dependencies": {
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
   },
 }

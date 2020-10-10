@@ -12,11 +12,34 @@
     width: 60vw;
 }
 
-.eventdata input{
+.firstrow{
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    width: 60vw;
+    margin: 0vh 0vw 5vh 0vw;
+}
+
+.name{
+    height: 10vh;
+    width: 27vw;
+    font-size: min(5vw, 5vh);
+    margin: 0vh 2vw 0vh 0vw;
+    border: 2px solid black;
+}
+.date{
+    height: 10vh;
+    width: 28vw;
+    font-size: min(5vw, 5vh);
+    margin: 0vh 0vw 0vh 2vw;
+    border: 2px solid black;
+}
+
+.search{
     display: inline-block;
     height: 10vh;
-    width: 60vw;
-    font-size: min(5vw, 30px);
-    margin: 0vh 0vw 5vh 0vw;
+    width: 59vw;
+    font-size: min(5vw, 5vh);
+    margin: 0vh 10vw 5vh 0vw;
     border: 2px solid black;
 }

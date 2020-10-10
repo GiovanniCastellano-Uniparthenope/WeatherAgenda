@@ -20,10 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baba8066-3291-4d26-bedb-d51f1e44f64b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/MyEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/MyEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewEvent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/NewEvent.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/NewEvent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/NewEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/NewEvent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -93,6 +93,7 @@
       <workItem from="1602057442622" duration="3104000" />
       <workItem from="1602141544886" duration="8678000" />
       <workItem from="1602228423819" duration="7991000" />
+      <workItem from="1602314053733" duration="5827000" />
     </task>
     <servers />
   </component>
@@ -123,6 +124,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601541745788" />
+    <state x="421" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602314119259">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="421" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602314119259" />
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602235092071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

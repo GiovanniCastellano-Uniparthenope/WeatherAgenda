@@ -10,19 +10,33 @@ window.onload = () => {
         });
     }
 
-    L.map("mapid").locate()
-    .on("locationfound", function(coords){
-        afterInitialize(coords.latitude, coords.longitude)
-    })
-    .on("locationerror", function (error){
-        afterInitialize(40.856721, 14.28451)
-    })
+    var key = "";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "js/OpenWeatherKey.txt", true);
+    rawFile.onload = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status === 0)
+            {
+                key = rawFile.responseText;
+                L.map("mapid").locate()
+                .on("locationfound", function(coords){
+                    afterInitialize(key, coords.latitude, coords.longitude)
+                })
+                .on("locationerror", function (error){
+                    afterInitialize(key,40.856721, 14.28451)
+                })
+            }
+        }
+    }
+    rawFile.send(null);
 }
 
-function afterInitialize(lat, lon)
+function afterInitialize(key, lat, lon)
 {
     var path = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat.toString()
-        + "&lon="+ lon.toString() +"&units=metric&appid=" + "";
+        + "&lon="+ lon.toString() +"&units=metric&appid=" + key;
 
     fetch(path)
         .then( e => e.json())
