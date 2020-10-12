@@ -1,5 +1,12 @@
 window.onload = () => {
+    var LeafletKey = "";
+    var OpenWeatherKey = "";
+    var lat = 0.0;
+    var lon = 0.0;
 
+    const mymap = L.map('mapid')
+
+    const date = document.getElementById("date");
     const nametext = document.getElementById("name");
     nametext.onfocus = function (){
         nametext.value = "";
@@ -14,6 +21,11 @@ window.onload = () => {
         }
     }
     const searchtext = document.getElementById("search");
+    searchtext.onkeypress = function (ke){
+        if(ke.key === "Enter")
+            searchtext.blur();
+    }
+
     searchtext.onfocus = function (){
         searchtext.value = "";
         searchtext.style.color = "#000000"
@@ -23,15 +35,48 @@ window.onload = () => {
         if (searchtext.value === "")
         {
             searchtext.style.color = "#a9a9a9"
-            searchtext.value = "Search location...";
+            searchtext.value = "Search city...";
+        }
+        else
+        {
+            var path = "https://api.openweathermap.org/data/2.5/weather?q="+ searchtext.value
+                +"&units=metric&appid=" + OpenWeatherKey;
+
+            fetch(path)
+                .then( e => e.json())
+                .then(weather => {
+                    const cod = weather.cod;
+                    if(cod === 200)
+                    {
+                        lat = weather.coord.lat;
+                        lon = weather.coord.lon;
+                        mymap.setView([lat , lon], 13)
+                    }
+                    else
+                    {
+                        searchtext.style.color = "#a9a9a9"
+                        searchtext.value = "City not found...";
+                    }
+                })
+                .catch()
         }
     }
 
-    var LeafletKey = "";
-    var lat = 0.0;
-    var lon = 0.0;
+    mymap.locate()
+    .on("locationfound", function(coords){
+        lat = coords.latitude;
+        lon = coords.longitude
+        mymap.setView([lat, lon], 18)
+    })
+    .on("locationerror", function (error){
+        lat = 40.856721;
+        lon = 14.28451;
+        mymap.setView([lat, lon], 18)
+    });
 
-    var mymap = L.map('mapid')
+    mymap.on("click", function(coords){
+        console.log(mymap.getCenter().lat + "   -   " + mymap.getCenter().lng);
+    });
 
     var LeafletFile = new XMLHttpRequest();
     LeafletFile.open("GET", "js/LeafletKey.txt", true);
@@ -55,19 +100,6 @@ window.onload = () => {
     }
     LeafletFile.send(null);
 
-    mymap.locate()
-    .on("locationfound", function(coords){
-        lat = coords.latitude;
-        lon = coords.longitude
-        mymap.setView([lat, lon], 18)
-    })
-    .on("locationerror", function (error){
-        lat = 40.856721;
-        lon = 14.28451;
-        mymap.setView([lat, lon], 18)
-    });
-
-    var OpenWeatherKey = "";
     var OpenWeatherFile = new XMLHttpRequest();
     OpenWeatherFile.open("GET", "js/OpenWeatherKey.txt", true);
     OpenWeatherFile.onload = function ()
@@ -77,9 +109,17 @@ window.onload = () => {
             if(OpenWeatherFile.status === 200 || OpenWeatherFile.status === 0)
             {
                 OpenWeatherKey = OpenWeatherFile.responseText;
-                //Add here OpenWeather interactions
             }
         }
     }
     OpenWeatherFile.send(null);
+
+    document.getElementById("createEvent").onclick = function(e){
+        createEvent(nametext.value, date.value, lat, lon);
+    }
+}
+
+function createEvent(name, date, lat, lon)
+{
+    console.log("Name: " + name + "\nDate: " + date + "\nLatitude: " + lat + "\nLongitude: " + lon);
 }

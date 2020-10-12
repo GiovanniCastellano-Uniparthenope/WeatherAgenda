@@ -1,36 +1,36 @@
 .mapid {
     height: 50vh;
-    width: 60vw;
-    margin: 0vh 0vw 5vh 0vw;
+    width: 75vw;
+    margin: 0vh 0vw 2vh 0vw;
     display: inline-block;
     border: 2px solid black;
 }
 
 .eventdata {
-    margin: 5vh 20vw;
+    margin: 5vh 10vw;
     height: 90vh;
-    width: 60vw;
+    width: 80vw;
 }
 
 .firstrow{
     display: flex;
     flex-direction: row;
     height: 15vh;
-    width: 60vw;
-    margin: 0vh 0vw 5vh 0vw;
+    width: 75vw;
+    margin: 0vh 0vw 0vh 0vw;
 }
 
 .name{
     height: 10vh;
-    width: 27vw;
+    width: 33vw;
     font-size: min(5vw, 5vh);
-    margin: 0vh 2vw 0vh 0vw;
+    margin: 0vh 5vw 0vh 0vw;
     border: 2px solid black;
 }
 .date{
     height: 10vh;
-    width: 28vw;
-    font-size: min(5vw, 5vh);
+    width: 34vw;
+    font-size: min(3vw, 5vh);
     margin: 0vh 0vw 0vh 2vw;
     border: 2px solid black;
 }
@@ -38,8 +38,16 @@
 .search{
     display: inline-block;
     height: 10vh;
-    width: 59vw;
-    font-size: min(5vw, 5vh);
-    margin: 0vh 10vw 5vh 0vw;
+    width: 74vw;
+    font-size: min(6vw, 5vh);
+    margin: 0vh 10vw 2vh 0vw;
     border: 2px solid black;
+}
+
+.createEvent{
+    height: 7vh;
+    width: 45vw;
+    font-size: min(3vw, 5vh);
+    border: 2px solid black;
+    margin: 0vh 15vw 0vh 15vw;
 }

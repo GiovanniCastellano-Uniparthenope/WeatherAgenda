@@ -78,7 +78,7 @@ function afterInitialize(key, lat, lon)
             document.getElementById("moisture").innerText = "H: " + weather.main.humidity.toString() + "%";
             document.getElementById("clouds").innerText = "C: " + weather.clouds.all.toString() + "%";
         })
-        .catch(console.error)
+        .catch()
 
     /*
     Notification.requestPermission().then( function(permission)
