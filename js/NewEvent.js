@@ -20,6 +20,7 @@ window.onload = () => {
             nametext.value = "Event name...";
         }
     }
+
     const searchtext = document.getElementById("search");
     searchtext.onkeypress = function (ke){
         if(ke.key === "Enter")
@@ -115,11 +116,46 @@ window.onload = () => {
     OpenWeatherFile.send(null);
 
     document.getElementById("createEvent").onclick = function(e){
-        createEvent(nametext.value, date.value, lat, lon);
+        second(nametext.value, date.value, lat, lon);
     }
 }
 
 function createEvent(name, date, lat, lon)
 {
-    console.log("Name: " + name + "\nDate: " + date + "\nLatitude: " + lat + "\nLongitude: " + lon);
+    let data = JSON.stringify({
+        name: name,
+        date: date,
+        lat: lat,
+        lon: lon
+    });
+
+    fetch('http://localhost:3000',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain',
+            'Content-Length': data.length.toString()
+        },
+        body: data
+    });
+}
+
+function second(name, date, lat, lon)
+{
+    let data = JSON.stringify({
+        name: name,
+        date: date,
+        lat: lat,
+        lon: lon
+    });
+
+    fetch('http://localhost:3000',{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'text/plain',
+        },
+    })
+    .then(e => e.json())
+    .then(events => {
+        console.log(events);
+    })
 }

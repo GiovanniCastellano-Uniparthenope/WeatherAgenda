@@ -22,9 +22,16 @@
     <list default="true" id="baba8066-3291-4d26-bedb-d51f1e44f64b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/NewEvent.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/NewEvent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hello-icon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hello-icon-144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hello-icon-152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hello-icon-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hello-icon-256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hello-icon-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/NewEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/NewEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +100,9 @@
       <workItem from="1602228423819" duration="7991000" />
       <workItem from="1602314053733" duration="5827000" />
       <workItem from="1602490275355" duration="6678000" />
+      <workItem from="1602575328421" duration="6091000" />
+      <workItem from="1602666040521" duration="3256000" />
+      <workItem from="1602678306146" duration="3984000" />
     </task>
     <servers />
   </component>
