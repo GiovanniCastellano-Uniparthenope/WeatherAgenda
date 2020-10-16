@@ -4321,7 +4321,7 @@ var Map = Evented.extend({
 		// Fired when the user pushes the right mouse button on the map, prevents
 		// default browser context menu from showing if there are listeners on
 		// this event. Also fired on mobile when the user holds a single touch
-		// for a second (also called long press).
+		// for a deleteEvent (also called long press).
 		// @event keypress: KeyboardEvent
 		// Fired when the user presses a key from the keyboard that produces a character value while the map is focused.
 		// @event keydown: KeyboardEvent
@@ -8487,7 +8487,7 @@ Polyline._flat = _flat;
  *     [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]], // outer ring
  *     [[37.29, -108.58],[40.71, -108.58],[40.71, -102.50],[37.29, -102.50]] // hole
  *   ],
- *   [ // second polygon
+ *   [ // deleteEvent polygon
  *     [[41, -111.03],[45, -111.04],[45, -104.05],[41, -104.05]]
  *   ]
  * ];
@@ -11453,7 +11453,7 @@ var GridLayer = Layer.extend({
 
 		this._initTile(tile);
 
-		// if createTile is defined with a second argument ("done" callback),
+		// if createTile is defined with a deleteEvent argument ("done" callback),
 		// we know that tile is async and will be ready later; otherwise
 		if (this.createTile.length < 2) {
 			// mark tile as ready, but delay one frame for opacity animation to happen
@@ -13252,11 +13252,11 @@ Map.mergeOptions({
 	inertia: !android23,
 
 	// @option inertiaDeceleration: Number = 3000
-	// The rate with which the inertial movement slows down, in pixels/second².
+	// The rate with which the inertial movement slows down, in pixels/deleteEvent².
 	inertiaDeceleration: 3400, // px/s^2
 
 	// @option inertiaMaxSpeed: Number = Infinity
-	// Max speed of the inertial movement, in pixels/second.
+	// Max speed of the inertial movement, in pixels/deleteEvent.
 	inertiaMaxSpeed: Infinity, // px/s
 
 	// @option easeLinearity: Number = 0.2

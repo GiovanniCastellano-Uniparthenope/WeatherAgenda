@@ -116,46 +116,111 @@ window.onload = () => {
     OpenWeatherFile.send(null);
 
     document.getElementById("createEvent").onclick = function(e){
-        second(nametext.value, date.value, lat, lon);
+        createEvent(nametext.value, date.value, lat, lon);
     }
 }
 
 function createEvent(name, date, lat, lon)
 {
-    let data = JSON.stringify({
-        name: name,
-        date: date,
-        lat: lat,
-        lon: lon
-    });
+    var data = ""
 
-    fetch('http://localhost:3000',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'text/plain',
-            'Content-Length': data.length.toString()
-        },
-        body: data
-    });
+    fetch('http://localhost:3000', {
+        method: 'GET',
+    })
+        .then(e => e.text())
+        .then(textfile => {
+            var jsonfile;
+            try {
+                jsonfile = JSON.parse(textfile.toString());
+                var new_data = '{"name": "' + name.toString() + '", "date": "' + date.toString() + '", "lat": "' + lat.toString() + '", "lon": "' + lon.toString() + '"}';
+                jsonfile.events.push(JSON.parse(new_data));
+
+                data = JSON.stringify(jsonfile);
+
+                fetch('http://localhost:3000', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                        'Content-Length': data.length.toString()
+                    },
+                    body: data
+                });
+            } catch (e) {
+                console.log(e);
+                data = JSON.stringify({
+                    "events": [
+                        {
+                            "name": name.toString(),
+                            "date": date.toString(),
+                            "lat": lat.toString(),
+                            "lon": lon.toString()
+                        }
+                    ]
+                });
+
+                fetch('http://localhost:3000', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                        'Content-Length': data.length.toString()
+                    },
+                    body: data
+                });
+            }
+        });
 }
 
-function second(name, date, lat, lon)
+function deleteEvent(name, date, lat, lon)
 {
-    let data = JSON.stringify({
-        name: name,
-        date: date,
-        lat: lat,
-        lon: lon
-    });
+    var data = ""
 
-    fetch('http://localhost:3000',{
+    fetch('http://localhost:3000', {
         method: 'GET',
-        headers: {
-            'Content-Type': 'text/plain',
-        },
     })
-    .then(e => e.json())
-    .then(events => {
-        console.log(events);
-    })
+    .then(e => e.text())
+    .then(textfile => {
+        var jsonfile;
+        try {
+            jsonfile = JSON.parse(textfile.toString());
+            var to_delete = '{"name": "' + jsonfile.events[0].name + '", "date": "' + jsonfile.events[0].date + '", "lat": "' + jsonfile.events[0].lat + '", "lon": "' + jsonfile.events[0].lon + '"}';
+            var json_to_delete = JSON.parse(to_delete);
+
+            var index = -1
+            var i = 0
+            console.log(jsonfile);
+
+            for(i = 0; i < jsonfile.events.length; i++)
+            {
+                if(jsonfile.events[i].name === json_to_delete.name)
+                if(jsonfile.events[i].date === json_to_delete.date)
+                if(jsonfile.events[i].lat === json_to_delete.lat)
+                if(jsonfile.events[i].lon === json_to_delete.lon)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+
+            if(index >= 0)
+            {
+                jsonfile.events.splice(index, 1);
+            }
+
+            console.log(jsonfile);
+
+            data = JSON.stringify(jsonfile);
+
+            fetch('http://localhost:3000', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                    'Content-Length': data.length.toString()
+                },
+                body: data
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    });
 }

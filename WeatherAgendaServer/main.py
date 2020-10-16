@@ -14,7 +14,15 @@ class WeatherAgendaServer(BaseHTTPRequestHandler):
         rootdir = 'event_files/'
         filename = 'event1.txt'
         try:
-            f = open(rootdir + filename);
+            try:
+                f = open(rootdir + filename)
+            except IOError:
+                f = open(rootdir + filename, "w+")
+                print("file created")
+            finally:
+                f.close()
+
+            f = open(rootdir + filename)
             fcontent = f.read()
             f.close()
             
@@ -23,7 +31,7 @@ class WeatherAgendaServer(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/text')
             self.end_headers()
 
-            self.wfile.write(bytes(fcontent, 'utf-8'));
+            self.wfile.write(bytes(fcontent, 'utf-8'))
             return
         except IOError:
             self.send_error(404, 'File not found')
@@ -32,8 +40,6 @@ class WeatherAgendaServer(BaseHTTPRequestHandler):
         rootdir = 'event_files/'
         filename = 'event1.txt'
         try:
-            print("Received POST request from " + self.path)
-
             self.send_response(200)
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
