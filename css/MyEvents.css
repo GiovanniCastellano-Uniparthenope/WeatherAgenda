@@ -1,0 +1,31 @@
+body {
+    font-family: "Arial Black";
+}
+
+.events {
+    height: 100vh;
+    width: 90vw;
+    margin: 0vh 5vw;
+}
+
+.event {
+    height: 10vh;
+    width: 80vw;
+    margin: 2vh 5vw;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.dateandlocation {
+    margin: 0vh 0vw 0vh 0vw;
+    font-size: min(9vw, 9vh);
+    vertical-align: middle;
+}
+
+.weatherforecast {
+    height: 9vh;
+    width: auto;
+    margin: 1vh 5vw 0vh 1vw;
+    object-fit: contain;
+}

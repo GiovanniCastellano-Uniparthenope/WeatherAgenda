@@ -5,7 +5,7 @@
     <title>My events - Weather Agenda</title>
     <link rel="stylesheet" type="text/css" href="css/MyEvents.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="images/hello-icon-192.png">
+    <link rel="apple-touch-icon" href="images/logo-192x192.png">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <meta name="theme-color" content="white"/>
@@ -13,10 +13,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Weather Agenda">
-    <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+    <meta name="msapplication-TileImage" content="images/logo-144x144.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
 <body>
-
+    <div id="events" class="events">
+        <div id="event" class="event">
+            <img id="weatherforecast" class="weatherforecast" src="images/question_mark.png">
+            <label id="dateandlocation" class="dateandlocation">?</label>
+        </div>
+    </div>
+    <script src="js/MyEvents.js"></script>
 </body>
 </html>

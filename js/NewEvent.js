@@ -127,47 +127,54 @@ function createEvent(name, date, lat, lon)
     fetch('http://localhost:3000', {
         method: 'GET',
     })
-        .then(e => e.text())
-        .then(textfile => {
-            var jsonfile;
-            try {
-                jsonfile = JSON.parse(textfile.toString());
-                var new_data = '{"name": "' + name.toString() + '", "date": "' + date.toString() + '", "lat": "' + lat.toString() + '", "lon": "' + lon.toString() + '"}';
-                jsonfile.events.push(JSON.parse(new_data));
+    .then(e => e.text())
+    .then(textfile => {
+        var jsonfile;
+        try {
+            jsonfile = JSON.parse(textfile.toString());
+            var new_data = '{"name": "' + name.toString() + '", "date": "' + date.toString() + '", "lat": "' + lat.toString() + '", "lon": "' + lon.toString() + '"}';
+            jsonfile.events.push(JSON.parse(new_data));
 
-                data = JSON.stringify(jsonfile);
+            data = JSON.stringify(jsonfile);
 
-                fetch('http://localhost:3000', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'text/plain',
-                        'Content-Length': data.length.toString()
-                    },
-                    body: data
-                });
-            } catch (e) {
-                console.log(e);
-                data = JSON.stringify({
-                    "events": [
-                        {
-                            "name": name.toString(),
-                            "date": date.toString(),
-                            "lat": lat.toString(),
-                            "lon": lon.toString()
-                        }
-                    ]
-                });
+            fetch('http://localhost:3000', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                    'Content-Length': data.length.toString()
+                },
+                body: data
+            })
+            .then(response => {
+                alert("Event created");
+            })
+            .catch(error => {
+                alert("Error during creation");
+            })
+        }
+        catch (e) {
+            console.log(e);
+            data = JSON.stringify({
+                "events": [
+                    {
+                        "name": name.toString(),
+                        "date": date.toString(),
+                        "lat": lat.toString(),
+                        "lon": lon.toString()
+                    }
+                ]
+            });
 
-                fetch('http://localhost:3000', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'text/plain',
-                        'Content-Length': data.length.toString()
-                    },
-                    body: data
-                });
-            }
-        });
+            fetch('http://localhost:3000', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                    'Content-Length': data.length.toString()
+                },
+                body: data
+            });
+        }
+    });
 }
 
 function deleteEvent(name, date, lat, lon)
