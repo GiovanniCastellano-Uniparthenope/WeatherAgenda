@@ -22,9 +22,8 @@
     <list default="true" id="baba8066-3291-4d26-bedb-d51f1e44f64b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyEvents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewEvent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/MyEvents.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/MyEvents.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/MyEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/MyEvents.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/NewEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/NewEvent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
@@ -101,7 +100,8 @@
       <workItem from="1602678306146" duration="3984000" />
       <workItem from="1602833694648" duration="8106000" />
       <workItem from="1602918484213" duration="6626000" />
-      <workItem from="1603091730921" duration="134000" />
+      <workItem from="1603091730921" duration="7419000" />
+      <workItem from="1603177591321" duration="6970000" />
     </task>
     <servers />
   </component>

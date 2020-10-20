@@ -114,7 +114,7 @@ function deleteOldEvents()
             for(i = 0; i < jsonfile.events.length; i++)
             {
                 var strdate = jsonfile.events[i].date;
-                var eventDate = new Date(parseInt(strdate.substr(0, 4)), parseInt(strdate.substr(5, 2)), parseInt(strdate.substr(8, 2)));
+                var eventDate = new Date(parseInt(strdate.substr(0, 4)), parseInt(strdate.substr(5, 2)) - 1, parseInt(strdate.substr(8, 2)));
                 if(today > eventDate)
                 {
                     indices[i]++

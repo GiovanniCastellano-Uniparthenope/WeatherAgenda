@@ -7,6 +7,8 @@ window.onload = () => {
     const mymap = L.map('mapid')
 
     const date = document.getElementById("date");
+    const today = new Date()
+    date.value = today.getFullYear().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getDate();
     const nametext = document.getElementById("name");
     nametext.onfocus = function (){
         nametext.value = "";
@@ -173,61 +175,6 @@ function createEvent(name, date, lat, lon)
                 },
                 body: data
             });
-        }
-    });
-}
-
-function deleteEvent(name, date, lat, lon)
-{
-    var data = ""
-
-    fetch('http://localhost:3000', {
-        method: 'GET',
-    })
-    .then(e => e.text())
-    .then(textfile => {
-        var jsonfile;
-        try {
-            jsonfile = JSON.parse(textfile.toString());
-            var to_delete = '{"name": "' + jsonfile.events[0].name + '", "date": "' + jsonfile.events[0].date + '", "lat": "' + jsonfile.events[0].lat + '", "lon": "' + jsonfile.events[0].lon + '"}';
-            var json_to_delete = JSON.parse(to_delete);
-
-            var index = -1
-            var i = 0
-            console.log(jsonfile);
-
-            for(i = 0; i < jsonfile.events.length; i++)
-            {
-                if(jsonfile.events[i].name === json_to_delete.name)
-                if(jsonfile.events[i].date === json_to_delete.date)
-                if(jsonfile.events[i].lat === json_to_delete.lat)
-                if(jsonfile.events[i].lon === json_to_delete.lon)
-                {
-                    index = i;
-                    break;
-                }
-            }
-
-
-            if(index >= 0)
-            {
-                jsonfile.events.splice(index, 1);
-            }
-
-            console.log(jsonfile);
-
-            data = JSON.stringify(jsonfile);
-
-            fetch('http://localhost:3000', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                    'Content-Length': data.length.toString()
-                },
-                body: data
-            });
-        } catch (e) {
-            console.log(e);
         }
     });
 }

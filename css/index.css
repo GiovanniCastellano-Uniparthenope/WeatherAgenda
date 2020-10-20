@@ -56,7 +56,7 @@ body {
 
 .weather label{
   font-family: "Arial Black";
-  font-size: min(5vw, 60px);
+  font-size: min(4vw, 60px);
 }
 
 .row1 img{

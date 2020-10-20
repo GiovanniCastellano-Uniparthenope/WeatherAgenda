@@ -19,7 +19,7 @@ body {
 
 .dateandlocation {
     margin: 0vh 0vw 0vh 0vw;
-    font-size: min(9vw, 9vh);
+    font-size: min(5vw, 5vh);
     vertical-align: middle;
 }
 
