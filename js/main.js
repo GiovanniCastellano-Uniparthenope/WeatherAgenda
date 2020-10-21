@@ -70,7 +70,7 @@ function afterInitialize(key, lat, lon)
         }
         else {
             document.getElementById("WImage").src = "images/exclamation.png";
-            document.getElementsByClassName("weather")[0].style.backgroundColor = "#b22222";
+            document.getElementsByClassName("weather")[0].style.backgroundColor = "#ff8787";
         }
 
         document.getElementById("wind").innerText = weather.wind.speed.toString() + " Km/h";

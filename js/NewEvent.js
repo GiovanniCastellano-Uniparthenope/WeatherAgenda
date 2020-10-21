@@ -46,22 +46,22 @@ window.onload = () => {
                 +"&units=metric&appid=" + OpenWeatherKey;
 
             fetch(path)
-                .then( e => e.json())
-                .then(weather => {
-                    const cod = weather.cod;
-                    if(cod === 200)
-                    {
-                        lat = weather.coord.lat;
-                        lon = weather.coord.lon;
-                        mymap.setView([lat , lon], 13)
-                    }
-                    else
-                    {
-                        searchtext.style.color = "#a9a9a9"
-                        searchtext.value = "City not found...";
-                    }
-                })
-                .catch()
+            .then( e => e.json())
+            .then(weather => {
+                const cod = weather.cod;
+                if(cod === 200)
+                {
+                    lat = weather.coord.lat;
+                    lon = weather.coord.lon;
+                    mymap.setView([lat , lon], 13)
+                }
+                else
+                {
+                    searchtext.style.color = "#a9a9a9"
+                    searchtext.value = "City not found...";
+                }
+            })
+            .catch()
         }
     }
 
@@ -174,7 +174,13 @@ function createEvent(name, date, lat, lon)
                     'Content-Length': data.length.toString()
                 },
                 body: data
-            });
+            })
+            .then(response => {
+                alert("Event created");
+            })
+            .catch(error => {
+                alert("Error during creation");
+            })
         }
     });
 }

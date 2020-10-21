@@ -17,6 +17,7 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
 <body>
+    <input type="button" id="back2" class="back2" name="back2" value="<" onclick="goBack()">
     <div id="events" class="events">
         <div id="event" class="event">
             <img id="weatherforecast" class="weatherforecast" name="weatherforecast" src="images/question_mark.png">
@@ -24,5 +25,11 @@
         </div>
     </div>
     <script src="js/MyEvents.js"></script>
+    <script>
+        function goBack()
+        {
+            window.open("index.html", "_self");
+        }
+    </script>
 </body>
 </html>

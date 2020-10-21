@@ -1,17 +1,36 @@
+html {
+    background-image: url("../images/earth-100.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 body {
     font-family: "Arial Black";
+    display: flex;
+    flex-direction: row;
+}
+
+.back2 {
+    height: 10vh;
+    width: 8vw;
+    border-radius: 100px;
+    background-color: #fffd88;
+    margin: 2vh 0vw;
+    font-size: min(8vw, 8vh);
 }
 
 .events {
-    height: 100vh;
-    width: 90vw;
-    margin: 0vh 5vw;
+    height: 90vh;
+    width: 80vw;
+    margin: 0vh 2vw;
 }
 
 .event {
+    border-radius: 20px;
     height: 10vh;
     width: 80vw;
-    margin: 2vh 5vw;
+    margin: 2vh 0vw;
     border: 3px solid black;
     display: flex;
     flex-direction: row;

@@ -24,6 +24,7 @@
             crossorigin=""></script>
 </head>
 <body>
+    <input type="button" id="back1" class="back1" name="back1" value="<" onclick="goBack()">
     <div class="eventdata">
         <div class="firstrow">
             <input type="text" id="name" class="name" value="Event name..." style="color: #a9a9a9">
@@ -34,5 +35,11 @@
         <input type="button" id="createEvent" class="createEvent" value="CREATE EVENT">
     </div>
     <script src="js/NewEvent.js"></script>
+    <script>
+        function goBack()
+        {
+            window.open("index.html", "_self");
+        }
+    </script>
 </body>
 </html>

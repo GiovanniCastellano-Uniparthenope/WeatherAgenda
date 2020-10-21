@@ -49,7 +49,8 @@ window.onload = () => {
             }
             if(image != null && label != null)
             {
-                while(OpenWeatherKey === ""){ console.log("OWK: " + OpenWeatherKey); }
+                if(OpenWeatherKey === "")
+                    location.reload();
                 var path = "https://api.openweathermap.org/data/2.5/forecast?lat=" + jsonfile.events[i].lat.toString()
                     + "&lon="+ jsonfile.events[i].lon.toString() +"&units=metric&appid=" + OpenWeatherKey;
                 var weather;
@@ -63,14 +64,13 @@ window.onload = () => {
                     weather = await request()
 
                     var strdate = jsonfile.events[i].date;
+                    var eventDate = new Date(parseInt(strdate.substr(0, 4)), parseInt(strdate.substr(5, 2)) - 1, parseInt(strdate.substr(8, 2)));
 
                     var str = "";
                     str += jsonfile.events[i].name + ", ";
                     str += weather.city.name + ", ";
-                    str += strdate;
+                    str += eventDate.toDateString();
                     label.innerHTML = str;
-
-                    var eventDate = new Date(parseInt(strdate.substr(0, 4)), parseInt(strdate.substr(5, 2)) - 1, parseInt(strdate.substr(8, 2)));
 
                     if(eventDate <= todayplus5) {
                         var days = Math.min((eventDate.getDate() - today.getDate()), 5);
@@ -79,18 +79,25 @@ window.onload = () => {
 
                         if (forecastedWeather.toString().toLowerCase() === "clear") {
                             image.src = "images/sun.png";
+                            newDiv.style.backgroundColor = "#3388ff";
                         } else if (forecastedWeather.toString().toLowerCase() === "rain") {
                             image.src = "images/rain.png";
+                            newDiv.style.backgroundColor = "#808080";
                         } else if (forecastedWeather.toString().toLowerCase() === "clouds") {
                             image.src = "images/sunclouds.png";
+                            newDiv.style.backgroundColor = "#3388ff";
                         } else if (forecastedWeather.toString().toLowerCase() === "thunderstorm") {
                             image.src = "images/storm.png";
+                            newDiv.style.backgroundColor = "#808080";
                         } else if (forecastedWeather.toString().toLowerCase() === "drizzle") {
                             image.src = "images/cloudy.png";
+                            newDiv.style.backgroundColor = "#d3d3d3";
                         } else if (forecastedWeather.toString().toLowerCase() === "snow") {
                             image.src = "images/snow.png";
+                            newDiv.style.backgroundColor = "#d3d3d3";
                         } else {
                             image.src = "images/exclamation.png";
+                            newDiv.style.backgroundColor = "#ff8787";
                         }
                     }
 
