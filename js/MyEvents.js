@@ -3,6 +3,7 @@ window.onload = () => {
     const eventDiv = document.getElementById("event")
     const eventDivPrototype = eventDiv.cloneNode(true);
 
+    eventDivPrototype.style.display = "flex";
     eventDiv.remove()
 
     var OpenWeatherKey = "";

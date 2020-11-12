@@ -8,7 +8,24 @@ window.onload = () => {
 
     const date = document.getElementById("date");
     const today = new Date()
-    date.value = today.getFullYear().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getDate();
+    var day, month, year;
+    day = today.getDate();
+    month = today.getMonth() + 1;
+    year = today.getFullYear();
+    if(day < 10)
+        day = "0" + day.toString();
+    else
+        day = day.toString();
+
+    if(month < 10)
+        month = "0" + month.toString()
+    else
+        month = month.toString()
+
+    year = year.toString()
+
+    date.value = year + "-" + month + "-" + day;
+    console.log(year + "-" + month + "-" + day);
     const nametext = document.getElementById("name");
     nametext.onfocus = function (){
         nametext.value = "";

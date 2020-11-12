@@ -1,8 +1,5 @@
 html {
-    background-image: url("../images/earth-100.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: lightblue;
 }
 
 body {
@@ -32,7 +29,7 @@ body {
     width: 80vw;
     margin: 2vh 0vw;
     border: 3px solid black;
-    display: flex;
+    display: none;
     flex-direction: row;
 }
 

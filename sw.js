@@ -29,8 +29,7 @@ let filesToCache = [
     'images/snow.png',
     'images/exclamation.png',
     'images/cloudframe.png',
-    'images/question_mark.png',
-    'images/earth-100.png'
+    'images/question_mark.png'
 ];
 
 self.addEventListener('install', function(e) {
